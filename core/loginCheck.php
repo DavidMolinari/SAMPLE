@@ -7,7 +7,6 @@
  */
 session_start();
 
-require_once '../class/Entity/User.php';
 require_once '../class/Manager/AdminManager.php';
 require_once '../class/Entity/Admin.php';
 require_once '../class/Database/Database.php';
@@ -25,8 +24,9 @@ $admin = new Admin();
 $admin->setPassword($password);
 $admin->setLogin($login);
 // Verification du login
+print_r($adminManager->verifyLogin($admin));
 if($adminManager->verifyLogin($admin) == true ) {
-    $_SESSION['admin'] = $admin;
+    $_SESSION['admin'] = serialize($admin);
     // Affichage de la page admin;
     echo '<script type="text/javascript"> window.open("../index.php","_self");</script>';
 } else {

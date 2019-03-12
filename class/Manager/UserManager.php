@@ -23,11 +23,17 @@ class UserManager
 
     }
     public function getUsers() {
-        $sth = $this->getConn()->prepare("SELECT * from USER;");
+        $sth = $this->conn->prepare("SELECT * from USER;");
         $sth->execute();
-        $result = $sth->fetchAll();
+        $result = $sth->fetchAll(PDO::FETCH_OBJ);
         return $result;
 
+    }
+
+    public function deleteUser($id){
+        $query = "DELETE FROM USER WHERE ID = '".$id."'";
+        $sth = $this->conn->prepare($query);
+        $sth->execute();
     }
 
     /**

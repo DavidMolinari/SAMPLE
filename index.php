@@ -7,7 +7,6 @@
 <?php
 if(isset($_SESSION['admin'])){
     include_once './pages/navbar.php';
-
     echo "<div class='container'>";
     echo "<div class='row'>";
 
@@ -15,6 +14,8 @@ if(isset($_SESSION['admin'])){
     echo "</div>";
     echo "</div>";
 
+
+    include_once './pages/user_create.php';
 }else {
     include_once './pages/admin_login_view.php';
 }

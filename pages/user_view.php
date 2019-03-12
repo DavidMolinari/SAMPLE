@@ -1,4 +1,5 @@
-<table class="table table-dark" style="margin-top: 2em;">
+<table class="usersTable table table-dark" style="margin-top: 2em;">
+    <button class="btn btn-primary" id="addUser">AJOUTER UN UTILISATEUR</button>
     <thead>
     <tr>
         <th scope="col">ID</th>
@@ -11,16 +12,5 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
-        <td><button type="button" class="btn btn-success">Primary</button>
-            <button type="button" class="btn btn-danger">Secondary</button>
-        </td>
-    </tr>
-    </tbody>
+    <?php include_once './core/getUsers.php'; ?>
 </table>

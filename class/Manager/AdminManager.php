@@ -14,10 +14,20 @@ class AdminManager
         $this->conn = $conn;
     }
 
-    function verifyLogin(Admin $admin){
-        //TODO
-        $query = "";
-        return true;
-    }
+    /**
+     * @param Admin $admin
+     * @return bool
+     */
+function verifyLogin(Admin $admin)
+{
+    $login = $admin->getLogin();
+    $password = $admin->getPassword();
+    $query = "SELECT ID FROM ADMIN WHERE LOGIN = '" . $login . "' AND PASSWORD = '" . $password . "'";
+    $dbh = $this->conn->prepare($query);
 
+    $dbh->execute();
+    $row = $dbh->fetchAll();
+    if ($row) return true;
+    return false;
+}
 }

@@ -8,8 +8,18 @@
             <li class="nav-item active">
                 <a class="nav-link" href="#">Liste des utilisateurs<span class="sr-only">(current)</span></a>
             </li>
-
         </ul>
-        <form action="./core/logout.php" method="POST"><button type="submit" class="btn btn-link btn-logout">Logout</button></form>
+
+        <form action="./core/logout.php" method="POST">
+            <?php
+            if($_SESSION['admin'] != null) {
+                echo 'Bonjour ';
+                include_once './class/Entity/Admin.php';
+                $session = unserialize($_SESSION['admin']);
+                echo($session->getLogin());
+            }
+            ?>
+
+            <button type="submit" class="btn btn-link btn-logout">Logout</button></form>
     </div>
 </nav>
