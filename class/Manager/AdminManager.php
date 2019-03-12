@@ -9,4 +9,17 @@
 class AdminManager
 {
 
+    private $conn;
+    public function __construct($conn)
+    {
+        $this->conn = $conn;
+    }
+
+    
+    function verifyLogin(Admin $admin){
+        //TODO
+        $query = "";
+        return true;
+    }
+
 }
