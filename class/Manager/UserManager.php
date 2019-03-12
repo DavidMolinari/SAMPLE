@@ -18,9 +18,25 @@ class UserManager
     /**
      *
      */
-    public function addUser($prenom, $nom, $email, $ddn) {
-        $query = '';
+    public function addUser(User $user) {
+        $query = "INSERT INTO `user`(`prenom`, `nom`, `email`, `password`, `ddn`, `last_connexion`) 
+                    VALUES ('
+                     ".$user->getPrenom()."
+                     ', '
+                     ".$user->getNom()."
+                     ', '
+                     ".$user->getEmail()."
+                     ', '
+                     ".$user->getPassword()."
+                     ', '
+                     ".$user->getDdn()."
+                     ', '
+                     ".$user->getLastConnexion()."
+                      ');";
 
+        $req = $this->conn->prepare($query);
+        print_r($req);
+        $req->execute();
     }
     public function getUsers() {
         $sth = $this->conn->prepare("SELECT * from USER;");

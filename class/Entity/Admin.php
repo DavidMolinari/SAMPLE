@@ -30,7 +30,7 @@ class Admin
     /**
      * @param mixed $login
      */
-    public function setLogin($login): void
+    public function setLogin($login)
     {
         $this->login = $login;
     }
@@ -38,7 +38,7 @@ class Admin
     /**
      * @param mixed $password
      */
-    public function setPassword($password): void
+    public function setPassword($password)
     {
         $this->password = $password;
     }
