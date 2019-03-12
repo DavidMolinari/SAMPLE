@@ -15,14 +15,29 @@ class UserManager
         $this->conn = $conn;
     }
 
-    public function addUser() {
+    /**
+     *
+     */
+    public function addUser($prenom, $nom, $email, $ddn) {
+        $query = '';
 
     }
     public function getUsers() {
+        $sth = $this->getConn()->prepare("SELECT * from USER;");
+        $sth->execute();
+        $result = $sth->fetchAll();
+        return $result;
 
     }
-    public function updateUserById($id, $user) {
 
+    /**
+     * @param $id
+     * @param User $user
+     */
+    public function updateUserById($id, User $user) {
+        $nom = $user->getNom();
+        // Requte à compléter
+        $query = "UPDATE USER set nom = '".$nom."' where ID = " . $id . ";";
     }
 
 
