@@ -6,7 +6,7 @@
                     <h5 class="card-title text-center">ADMIN PANEL</h5>
                     <form class="form-signin">
                         <div class="form-label-group">
-                            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                            <input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
                             <label for="inputEmail">Email</label>
                         </div>
 
