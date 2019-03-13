@@ -16,14 +16,14 @@ $userManager = new UserManager($connexion);
 foreach ($userManager->getUsers() as $user){
     echo "
         <tr>
-            <td>$user->ID</td>
-            <td>$user->PRENOM</td>
-            <td>$user->NOM</td>
-            <td>$user->EMAIL</td>
-            <td>$user->DDN</td>
-            <td>$user->LAST_CONNEXION</td>
+            <td class='user_id'>".$user->ID."</td>
+            <td><input type='text' class='user_prenom' value='" .$user->PRENOM."' style='width:100px;'></td>
+            <td><input type='text' class='user_nom' value='" .$user->NOM."' style='width:100px;'></td>
+            <td><input type='text' class='user_email' value='" .$user->EMAIL."'></td>
+            <td><input type='date' value='" . date ($user->DDN) ."'></td>
+            <td>".$user->LAST_CONNEXION."</td>
             <td>
-                <button class='btn btn-success'>EDITER</button>
+                <button class='edit btn btn-success'>EDITER</button>
                 <button class='remove btn btn-danger' data-id='".$user->ID."'>SUPPRIMER</button>
             </td>
         </tr>

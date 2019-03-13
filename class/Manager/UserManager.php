@@ -18,8 +18,24 @@ class UserManager
     /**
      *
      */
-    public function addUser($prenom, $nom, $email, $ddn) {
-        $query = '';
+    public function addUser(User $user) {
+
+        $nom = $user->getNom();
+        $prenom = $user->getPrenom();
+        $email = $user->getEmail();
+        $ddn = $user->getDdn();
+        $pwd = $user->getPassword();
+
+        $query = "
+        INSERT INTO USER (prenom, nom, email, password, ddn)
+        values(
+        '".$prenom."',
+        '".$nom."',
+        '".$email."',
+        '".$pwd."',
+        '".$ddn."')";
+        $sth = $this->conn->prepare($query);
+        $sth->execute();
 
     }
     public function getUsers() {
@@ -44,6 +60,26 @@ class UserManager
         $nom = $user->getNom();
         // Requte à compléter
         $query = "UPDATE USER set nom = '".$nom."' where ID = " . $id . ";";
+    }
+
+    /**
+     * @param $id
+     * @param $prenom
+     * @param $nom
+     * @param $email
+     */
+    public function updateUserByIdSal($id, $prenom, $nom, $email){
+        $query = "
+        UPDATE USER
+         SET 
+         prenom = '".htmlspecialchars($prenom)."',
+         nom = '".htmlspecialchars($nom)."',
+         email = '".htmlspecialchars($email)."'
+         WHERE id = ".htmlspecialchars($id)."
+        ";
+
+        $sth = $this->conn->prepare($query);
+        $sth->execute();
     }
 
 

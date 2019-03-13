@@ -24,13 +24,13 @@ $email = htmlspecialchars($_POST['email']);
 $password = htmlspecialchars($_POST['password']);
 $prenom = htmlspecialchars($_POST['prenom']);
 $nom = htmlspecialchars($_POST['nom']);
-$DDN = htmlspecialchars($_POST['DDN']);
+$DDN = htmlspecialchars($_POST['ddn']);
 $user = new User();
 $user->setNom($nom);
-$user->setLogin($email);
+$user->setEmail($email);
 $user->setPassword($password);
 $user->setDdn($DDN);
 $user->setPrenom($prenom);
-//$userManager->addUser($user);
-echo '<script>  location.reload();</script>';
+$userManager->addUser($user);
+echo '<script type="text/javascript"> window.open("../index.php","_self");</script>';
 

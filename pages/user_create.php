@@ -34,7 +34,7 @@
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-birthday-cake"></i> </span>
 		 </div>
-        <input name="DDN" class="form-control" type="date" value="2011-08-19">
+        <input name="ddn" class="form-control" placeholder="Birthday date" type="birthday">
     </div> <!-- form-group// -->
 
     <div class="form-group">
