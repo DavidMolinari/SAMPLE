@@ -5,7 +5,7 @@
  * Date: 12/03/2019
  * Time: 13:52
  */
-
+date_default_timezone_set('Europe/Paris');
 
 require_once '../class/Manager/UserManager.php';
 require_once '../class/Entity/User.php';
@@ -19,6 +19,7 @@ echo "wesh alors";
 if(!isset($_POST['prenom']) && !isset($_POST['prenom']) && !isset($_POST['email']) && !isset($_POST['password']) && !isset($_POST['DDN']))
     die('Paramètres manqyants');
 
+echo "if ok";
 
 $email = htmlspecialchars($_POST['email']);
 $password = htmlspecialchars($_POST['password']);

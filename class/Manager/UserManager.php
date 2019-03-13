@@ -19,13 +19,11 @@ class UserManager
      *
      */
     public function addUser(User $user) {
-
         $nom = $user->getNom();
         $prenom = $user->getPrenom();
         $email = $user->getEmail();
         $ddn = $user->getDdn();
         $pwd = $user->getPassword();
-
         $query = "
         INSERT INTO USER (prenom, nom, email, password, ddn)
         values(
@@ -36,7 +34,6 @@ class UserManager
         '".$ddn."')";
         $sth = $this->conn->prepare($query);
         $sth->execute();
-
     }
     public function getUsers() {
         $sth = $this->conn->prepare("SELECT * from USER;");

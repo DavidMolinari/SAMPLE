@@ -25,7 +25,7 @@
 
         <div class="form-group input-group">
             <div class="input-group-prepend">
-                <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                <span class="input-group-text"> <i class="fa fa-key"></i> </span>
             </div>
             <input name="password" class="form-control" placeholder="password" type="password">
         </div> <!-- form-group// -->

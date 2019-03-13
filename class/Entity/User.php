@@ -28,7 +28,7 @@ class User
     /**
      * @param mixed $password
      */
-    public function setPassword($password): void
+    public function setPassword($password)
     {
         $this->password = $password;
     }
@@ -36,7 +36,7 @@ class User
     /**
      * @param mixed $nom
      */
-    public function setNom($nom): void
+    public function setNom($nom)
     {
         $this->nom = $nom;
     }
@@ -60,7 +60,7 @@ class User
     /**
      * @param mixed $email
      */
-    public function setEmail($email): void
+    public function setEmail($email)
     {
         $this->email = $email;
     }
@@ -76,7 +76,7 @@ class User
     /**
      * @param mixed $ddn
      */
-    public function setDdn($ddn): void
+    public function setDdn($ddn)
     {
         $this->ddn = $ddn;
     }
@@ -92,7 +92,7 @@ class User
     /**
      * @param mixed $last_connexion
      */
-    public function setLastConnexion($last_connexion): void
+    public function setLastConnexion($last_connexion)
     {
         $this->last_connexion = $last_connexion;
     }
@@ -108,7 +108,7 @@ class User
     /**
      * @param mixed $prenom
      */
-    public function setPrenom($prenom): void
+    public function setPrenom($prenom)
     {
         $this->prenom = $prenom;
     }
